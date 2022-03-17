@@ -1,7 +1,7 @@
 function initialize(){
 	var status="Offline";
 	if(navigator.onLine){
-		status="Online";
+		status="Online"
 		retrieveContacts();
 	}else{
 		const localStorage = window.localStorage;
@@ -13,10 +13,10 @@ function initialize(){
 		}
 	}
 	
-	document.getElementById("status").innerHTML = status;
+	document.getElementById("status").innerHTML = "status";
 	
-	document.body.addEventListener("online",function(){document.getElementById("status").innerHTML="Online";},false);
-	document.body.addEventListener("offline",function(){document.getElementById("status").innerHTML="Offline";}, false);
+	document.body.addEventListener("online", function(){document.getElementById("status").innerHTML="Online";}, false);
+	document.body.addEventListener("offline", function(){document.getElementById("status").innerHTML="Offline";},false);
 	
 }
 
@@ -25,7 +25,7 @@ function retrieveContacts(){
 	const url = "contacts.json";
 	
 	xhr.onreadystatechange=function(){
-		if (xhr.readyState === 4){
+		if(xhr.readyState === 4){
 			var contacts = JSON.parse(xhr.response).contacts;
 			displayContacts(contacts);
 			
@@ -36,10 +36,9 @@ function retrieveContacts(){
 		}
 	};
 	
-	xhr.open("get",url);
+	xhr.open("get", url);
 	xhr.send();
 }
-
 
 function displayContacts(contacts){
 	contacts.forEach(addRow);
@@ -61,6 +60,3 @@ function addRow(contact){
 	emailCell.setAttribute('data-label', "Email");
 	emailCell.innerHTML = contact.email;
 }
-
-
-
