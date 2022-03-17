@@ -29,10 +29,9 @@ table th{
 		display:block;
 		margin-bottom:1em;
 	}
-	
 	table td{
 		display:block;
-		text-align:right;
+		text-align:center;
 		border-bottom:0px;
 	}
 	
@@ -44,14 +43,15 @@ table th{
 	}
 	
 	table td:last-child{
-		border-bottom:0;
+		border-bottom:0px;
 		border:1px solid #000000;
 	}
 	
 	tr:nth-child(even){
 		background-color:#dddddd;
 	}
-	
 }
+
+
 
 
